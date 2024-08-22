@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="todo-input" placeholder="Enter a new task">
+    <button onclick="addTask()">Add Task</button>
+    
+    <div id="todo-list"></div>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('todo-input');
+            const taskText = input.value.trim();
+
+            if (taskText === '') {
+                alert('Please enter a task.');
+                return;
+            }
+
+            // Create a new div for the task
+            const taskDiv = document.createElement('div');
+            taskDiv.classList.add('todo-item');
+
+            // Create a span element to hold the task text
+            const taskSpan = document.createElement('span');
+            taskSpan.textContent = taskText;
+
+            // Create a delete button for the task
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.onclick = function() {
+                taskDiv.remove();
+            };
+
+            // Append the span and button to the task div
+            taskDiv.appendChild(taskSpan);
+           // taskDiv.appendChild(deleteButton);
+
+            // Append the task div to the list
+            const list = document.getElementById('todo-list');
+            list.appendChild(taskDiv);
+
+            // Clear the input field
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

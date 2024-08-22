@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h2 class="one">This is One</h2>
+    <h2>This is Two</h2>
+    <h2>This is Three</h2>
+    <h2 class="one">This is Four</h2>
+
+    <script>
+        //by tagname
+        var ele=document.getElementsByTagName("h2");
+       // ele[1].innerHTML="This is Two (2)"
+       var someText=ele[1].innerHTML;
+       ele[1].innerHTML=someText+"(222)"
+
+       //byclassname
+       var headings=document.getElementsByClassName("one");
+        var someText=headings[1].innerHTML;
+       headings[1].innerHTML=someText+"(222)"
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <h1 id="myh1" style="cursor: pointer;">Welcome to Event Listener</h1>
+    <h2 id="myh2">This is another event</h2>
+    <script>
+
+       var element= document.getElementById("myh1")
+       element.addEventListener("click",headingClicked);
+
+       function headingClicked(){
+        alert("Heading was clicked")
+       }
+
+       var ele=document.getElementById("myh2")
+       ele.addEventListener("mouseover",headClicked)
+
+       function headClicked(){
+        alert("Heading h2 ")
+        ele.innerHTML="The mouse moved..."
+
+       }
+    </script>
+</body>
+</html>
